@@ -1,0 +1,117 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #2c3e50;
+    font-family: cursive;
+    height: 20 px;
+}
+
+li {
+  float: left;
+}
+body{
+    font-family: Arial,
+    color:black;
+    background-color:#edf4ff;
+
+}
+form {
+    /* Uniquement centrer le formulaire sur la page */
+    margin: 10 px;
+    width: 400px;
+    /* Encadré pour voir les limites du formulaire */
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 10px;
+    background-color:   #f8fbff   ;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+p {
+     font-family: cursive;
+    font-size-adjust: auto;
+    font-size: 22px ;
+}
+li a:hover {
+    background-color: #111;
+}
+footer {
+    position: absolute; bottom: 0;
+}
+
+#formulaire {
+    float: left;
+    padding-left: 1%; 
+    margin-right: 0.5%;
+    margin-top: 0.5%;
+    
+    
+}
+
+
+#mapid{
+    padding-left:5%;
+    margin-top: 0.5%;
+    height: 800px ;
+    width: 70%;
+
+
+}
+label {
+ margin-top:10px;
+ display:block;
+   
+ }
+.label_seul{
+ margin-top:5%;
+ display:block;
+   
+ }
+select {
+ margin-top:10px;
+ }
+input[type=submit], input[type=reset] {
+ width:20%;
+
+ box-shadow:1px 1px 1px #D83F3D;
+ cursor:pointer;
+float: right;
+margin-bottom: 0.5%;
+ }
+input, textarea, select {
+ padding:3px;
+ border:1px solid  #05053b ;
+border-radius: 10px;
+ width:60%;
+height: 10%;
+ box-shadow:1px 1px 2px  #05053b    inset;
+    
+ }
+.form_seul{
+    float: left;
+    padding-left: 1%; 
+    margin-right: 0.5%;
+    margin-top: 0.5%;
+    width: 100%;
+    height: 50%;
+   
+}
+#formulaire_seul  {
+   
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-top: 10%;
+    
+    
+} 
+}
+
+}
