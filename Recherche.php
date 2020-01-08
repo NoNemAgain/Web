@@ -20,6 +20,7 @@ include("Api.php");
     if (isset($_POST["search"])){
         $search= $_POST["search"];
         $boolVoid=($search=="blanc");
+        for ($number = 0; $number <= count($records)-1; $number++){
          $boolDiscipline=($search==$records[$number]["fields"]["discipline_lib"]);
         $boolAnnee=($search==$records[$number]["fields"]["niveau_lib"]);
         $boolSecteur=($search==$records[$number]["fields"]["sect_disciplinaire_lib"]);
@@ -34,6 +35,7 @@ include("Api.php");
                             }
                          }
                      }
+        }
     }
         
      if (isset($_POST["annee"])&&isset($_POST["discipline"])&&isset($_POST["formation"])&&isset($_POST["region"])&&isset($_POST["departement"])&&isset($_POST["departement"])){
