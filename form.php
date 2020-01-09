@@ -73,19 +73,7 @@ include("Api.php");
         }
          ?>
           
-     </select>
-    <Label for ="secteur">Secteur:<label>
-     <select name="secteur"> 
-           <option value="blanc">Aucun filtre</option>';
-         <?php
-        for ($number = 0; $number <= count($facetsGrSecteur); $number++)
-         {
-            if(isset($facetsGrSecteur[$number]["path"])){
-             echo'<option value='.$facetsGrSecteur[$number]["path"].'>'.$facetsGrSecteur[$number]["path"].'</option>';
-            }
-        }
-         ?>
-         </select>
+  
         <input type="submit" value="valider">
         </form>
              </div>

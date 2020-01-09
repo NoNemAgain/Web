@@ -11,14 +11,15 @@ include("Api.php");
     
    <?php
     include("form.php");
-    include("leaflet.php");
+    include("LeafLet.php");
         ?>
  <script>
       <?php
-               for ($number = 0; $number <= count($facetsGrMap)-1; $number++)
+               for ($number = 0; $number <= count($arraysRecordsMap)-1; $number++)
                {
-                       if(isset($facetsGrMap[$number]["fields"]["coordonnees"][0])&&isset($facetsGrMap[$number]["fields"]["coordonnees"][1])&&isset($facetsGrMap[$number]["fields"]["element_wikidata"])){
-                echo'L.marker(['.$facetsGrMap[$number]["fields"]["coordonnees"][0].','.$facetsGrMap[$number]["fields"]["coordonnees"][1].'], {icon: greenIcon}).addTo(map).bindPopup("'.$facetsGrMap[$number]["fields"]["uo_lib"].' :                   '.$facetsGrMap[$number]["fields"]["element_wikidata"].'");';
+                   
+                       if(isset($arraysRecordsMap[$number]["fields"]["coordonnees"][0])&&isset($arraysRecordsMap[$number]["fields"]["coordonnees"][1])&&isset($arraysRecordsMap[$number]["fields"]["element_wikidata"])){
+                echo'L.marker(['.$arraysRecordsMap[$number]["fields"]["coordonnees"][0].','.$arraysRecordsMap[$number]["fields"]["coordonnees"][1].'], ).addTo(map).bindPopup("'.$arraysRecordsMap[$number]["fields"]["uo_lib"].' :                   '.$arraysRecordsMap[$number]["fields"]["element_wikidata"].'");';
                     }
                   }
          ?>
