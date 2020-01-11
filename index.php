@@ -6,7 +6,7 @@ include("header.html");
 
   
 <div id="formulaire_seul">
-    <form  class="form_seul" method ="POST" Action ="Recherche.php">
+    <form  class="form_seul" method ="POST" Action ="Carte.php">
       <h1> Recherche </h1>
      <Label class= "label_authentification" ></label>
       <input type="text" name="search" />

@@ -15,6 +15,29 @@ include("Api.php");
         ?>
  <script>
       <?php
+    if (isset($_POST["search"])&&(!(empty($_POST["search"])))){
+        $search= $_POST["search"];
+        for ($number = 0; $number <= count($arraysRecordsComplet)-1; $number++){
+        $boolAnnee=($search==$arraysRecordsComplet[$number]["fields"]["niveau_lib"]);
+        $boolDiscipline=($search==$arraysRecordsComplet[$number]["fields"]["sect_disciplinaire_lib"]);
+        $boolFormation=($search==$arraysRecordsComplet[$number]["fields"]["typ_diplome_lib"]);
+        $boolRegion=($search==$arraysRecordsComplet[$number]["fields"]["reg_etab_lib"]);
+        $boolDepartement=($search==$arraysRecordsComplet[$number]["fields"]["dep_ins_lib"]);
+        $bool =$boolAnnee&&$boolDiscipline&&$boolFormation&&$boolRegion&&$boolDepartement;
+        $name =$arraysRecordsComplet[$number]["fields"]["etablissement_lib"];
+        if ($bool){
+                     for ($numberMap = 0; $numberMap <= count($arraysRecordsMap)-1; $numberMap++){
+                          $nameMap =$arraysRecordsMap[$numberMap]["fields"]["uo_lib"];  
+                          $boolSameName=($name==$nameMap);
+                       if(isset($arraysRecordsMap[$numberMap]["fields"]["coordonnees"][0])&&isset($arraysRecordsMap[$numberMap]["fields"]["coordonnees"][1])&&isset($arraysRecordsMap[$numberMap]["fields"]["url"])&&$boolSameName){
+                echo'L.marker(['.$arraysRecordsMap[$numberMap]["fields"]["coordonnees"][0].','.$arraysRecordsMap[$numberMap]["fields"]["coordonnees"][1].'], ).addTo(map).bindPopup("'.$arraysRecordsMap[$numberMap]["fields"]      ["uo_lib"].' :                   '.$arraysRecordsMap[$numberMap]["fields"]["url"].'");';
+                    
+                  }
+                }
+            }
+        }
+    }
+    if(empty($_POST["search"])){
                for ($number = 0; $number <= count($arraysRecordsMap)-1; $number++)
                {
                    
@@ -22,11 +45,11 @@ include("Api.php");
                 echo'L.marker(['.$arraysRecordsMap[$number]["fields"]["coordonnees"][0].','.$arraysRecordsMap[$number]["fields"]["coordonnees"][1].'], ).addTo(map).bindPopup("'.$arraysRecordsMap[$number]["fields"]["uo_lib"].' :                   '.$arraysRecordsMap[$number]["fields"]["element_wikidata"].'");';
                     }
                   }
+    }
          ?>
          
          </script>
          
-    </div><br />
     <footer>
         <p>©Thomas DUONG</p>
     </footer>

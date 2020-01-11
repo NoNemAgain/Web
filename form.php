@@ -18,7 +18,7 @@ include("Api.php");
              echo'<option value='.$facetsGrAnnee[$number]["path"].'>'.$facetsGrAnnee[$number]["path"].'</option>';
                  }
         }
-         ?>s
+         ?>
      </select>
        <Label for ="discipline">Discipline:<label>
      <select name="discipline"> 
