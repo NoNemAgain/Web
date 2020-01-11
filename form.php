@@ -15,7 +15,7 @@ include("Api.php");
           for ($number = 0; $number <= count($facetsGrAnnee)  ; $number++)
          {
                  if(isset($facetsGrAnnee[$number]["path"])){
-             echo'<option value='.$facetsGrAnnee[$number]["path"].'>'.$facetsGrAnnee[$number]["path"].'</option>';
+            echo '<option value="'.$facetsGrAnnee[$number]["path"].'">'.$facetsGrAnnee[$number]["path"].'</option>';
                  }
         }
          ?>
@@ -28,7 +28,7 @@ include("Api.php");
         for ($number = 0; $number <= count($facetsGrDiscipline); $number++)
          {
                 if(isset($facetsGrDiscipline[$number]["path"])){
-             echo'   <option value='.$facetsGrDiscipline[$number]["path"].'>'.$facetsGrDiscipline[$number]["path"].'</option>';
+             echo'   <option value="'.$facetsGrDiscipline[$number]["path"].'">'.$facetsGrDiscipline[$number]["path"].'</option>';
                 }
         }
          ?>
@@ -41,7 +41,7 @@ include("Api.php");
           for ($number =0; $number <= count($facetsGrFormation); $number++)
          {  
               if(isset($facetsGrFormation[$number]["path"])){
-             echo'   <option value='.$facetsGrFormation[$number]["path"].'>'.$facetsGrFormation[$number]["path"].'</option>';
+             echo'   <option value="'.$facetsGrFormation[$number]["path"].'">'.$facetsGrFormation[$number]["path"].'</option>';
               }
         }
          ?>
@@ -54,7 +54,7 @@ include("Api.php");
           for ($number = 0; $number <= count($facetsGrRegion); $number++)
          {
                 if(isset($facetsGrRegion[$number]["path"])){
-             echo'   <option value='.$facetsGrRegion[$number]["path"].'>'.$facetsGrRegion[$number]["path"].'</option>';
+             echo'   <option value="'.$facetsGrRegion[$number]["path"].'">'.$facetsGrRegion[$number]["path"].'</option>';
                 }
         }
          ?>
@@ -68,7 +68,7 @@ include("Api.php");
           for ($number = 0; $number <= count($facetsGrDep); $number++)
          {    
               if(isset($facetsGrDep[$number]["path"])){
-             echo' <option value='.$facetsGrDep[$number]["path"].'>'.$facetsGrDep[$number]["path"].'</option>';
+             echo' <option value="'.$facetsGrDep[$number]["path"].'">'.$facetsGrDep[$number]["path"].'</option>';
               }
         }
          ?>

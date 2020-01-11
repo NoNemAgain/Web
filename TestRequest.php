@@ -21,7 +21,7 @@ include("Api.php");
         $boolRegion=($region==$arraysRecordsComplet[$number]["fields"]["reg_ins_lib"]||($region=="blanc"));
         $boolDepartement=(($departement==$arraysRecordsComplet[$number]["fields"]["dep_ins_lib"])||($departement=="blanc"));
         $bool =$boolAnnee&&$boolDiscipline&&$boolFormation&&$boolRegion&&$boolDepartement;
-       
+
         if ($bool){
                      for ($numberMap = 0; $numberMap <= count($arraysRecordsMap)-1; $numberMap++){
                         

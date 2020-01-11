@@ -8,7 +8,9 @@ include("Api.php");
     <?php
     include("form.php");
  include("LeafLet.php");
-    ?>
+    ?> 
+</div> 
+
       <script>
    <?php  
     
@@ -66,4 +68,3 @@ include("Api.php");
          ?>
 
               </script>
-              </body>
