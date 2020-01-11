@@ -23,28 +23,28 @@ include("Api.php");
         $boolFormation=($search==$arraysRecordsComplet[$number]["fields"]["typ_diplome_lib"]);
         $boolRegion=($search==$arraysRecordsComplet[$number]["fields"]["reg_etab_lib"]);
         $boolDepartement=($search==$arraysRecordsComplet[$number]["fields"]["dep_ins_lib"]);
-        $bool =$boolAnnee&&$boolDiscipline&&$boolFormation&&$boolRegion&&$boolDepartement;
+        $bool =$boolAnnee||$boolDiscipline||$boolFormation||$boolRegion||$boolDepartement;
         $name =$arraysRecordsComplet[$number]["fields"]["etablissement_lib"];
         if ($bool){
-                     for ($numberMap = 0; $numberMap <= count($arraysRecordsMap)-1; $numberMap++){
+                    for ($numberMap = 0; $numberMap <= count($arraysRecordsMap)-1; $numberMap++){
                           $nameMap =$arraysRecordsMap[$numberMap]["fields"]["uo_lib"];  
                           $boolSameName=($name==$nameMap);
-                       if(isset($arraysRecordsMap[$numberMap]["fields"]["coordonnees"][0])&&isset($arraysRecordsMap[$numberMap]["fields"]["coordonnees"][1])&&isset($arraysRecordsMap[$numberMap]["fields"]["url"])&&$boolSameName){
-                echo'L.marker(['.$arraysRecordsMap[$numberMap]["fields"]["coordonnees"][0].','.$arraysRecordsMap[$numberMap]["fields"]["coordonnees"][1].'], ).addTo(map).bindPopup("'.$arraysRecordsMap[$numberMap]["fields"]      ["uo_lib"].' :                   '.$arraysRecordsMap[$numberMap]["fields"]["url"].'");';
-                    
+                       if(isset($arraysRecordsMap[$numberMap]["fields"]["coordonnees"][0])&&isset($arraysRecordsMap[$numberMap]["fields"]["coordonnees"][1])&&isset($arraysRecordsMap[$numberMap]["fields"]["url"])&&isset($arraysRecordsMap[$numberMap]["fields"]["element_wikidata"])&&$boolSameName){
+                           $string = $nameMap . "<br> <a href='" . $arraysRecordsMap[$numberMap]["fields"]["url"] . "'target='_blank'>" .$arraysRecordsMap[$numberMap]["fields"]["url"] . "</a>" . "<br> <a href='".$arraysRecordsMap[$numberMap]["fields"]["element_wikidata"]."'>En savoir plus</a>";
+                echo'L.marker(['.$arraysRecordsMap[$numberMap]["fields"]["coordonnees"][0].','.$arraysRecordsMap[$numberMap]["fields"]["coordonnees"][1].'], ).addTo(map).bindPopup("'.$string.'");';
                   }
                 }
             }
         }
     }
     if(empty($_POST["search"])){
-               for ($number = 0; $number <= count($arraysRecordsMap)-1; $number++)
-               {
-                   
-                       if(isset($arraysRecordsMap[$number]["fields"]["coordonnees"][0])&&isset($arraysRecordsMap[$number]["fields"]["coordonnees"][1])&&isset($arraysRecordsMap[$number]["fields"]["element_wikidata"])){
-                echo'L.marker(['.$arraysRecordsMap[$number]["fields"]["coordonnees"][0].','.$arraysRecordsMap[$number]["fields"]["coordonnees"][1].'], ).addTo(map).bindPopup("'.$arraysRecordsMap[$number]["fields"]["uo_lib"].' :                   '.$arraysRecordsMap[$number]["fields"]["element_wikidata"].'");';
-                    }
+               for ($numberMap = 0; $numberMap <= count($arraysRecordsMap)-1; $numberMap++){
+                          $nameMap =$arraysRecordsMap[$numberMap]["fields"]["uo_lib"];  
+                       if(isset($arraysRecordsMap[$numberMap]["fields"]["coordonnees"][0])&&isset($arraysRecordsMap[$numberMap]["fields"]["coordonnees"][1])&&isset($arraysRecordsMap[$numberMap]["fields"]["url"])&&isset($arraysRecordsMap[$numberMap]["fields"]["element_wikidata"])){
+                           $string = $nameMap . "<br> <a href='" . $arraysRecordsMap[$numberMap]["fields"]["url"] . "'target='_blank'>" .$arraysRecordsMap[$numberMap]["fields"]["url"] . "</a>" . "<br> <a href='".$arraysRecordsMap[$numberMap]["fields"]["element_wikidata"]."'>En savoir plus</a>";
+                echo'L.marker(['.$arraysRecordsMap[$numberMap]["fields"]["coordonnees"][0].','.$arraysRecordsMap[$numberMap]["fields"]["coordonnees"][1].'], ).addTo(map).bindPopup("'.$string.'");';
                   }
+                }
     }
          ?>
          

@@ -8,7 +8,7 @@ include("Api.php");
 <h1>Recherche </h1>
      
   <p>Chercher une formation</p>
-     <Label for ="annee">Année:<label>
+     <Label >Année:</Label>
      <select name="annee"> 
            <option value="blanc">Aucun filtre</option>';
          <?php
@@ -20,7 +20,7 @@ include("Api.php");
         }
          ?>
      </select>
-       <Label for ="discipline">Discipline:<label>
+       <Label >Discipline:</Label>
      <select name="discipline"> 
          <option value="blanc">Aucun filtre</option>';
          <?php
@@ -34,7 +34,7 @@ include("Api.php");
          ?>
      </select>
          
-    <Label for ="formation">Type de formation:<label>
+    <Label >Type de formation:</Label>
      <select name="formation"> 
           <option value="blanc">Aucun filtre</option>';
          <?php
@@ -46,7 +46,7 @@ include("Api.php");
         }
          ?>
           </select>
-    <Label for ="region">Region:<label>
+    <Label >Region:</Label>
      <select name="region"> 
          <option value="blanc">Aucun filtre</option>';
          <?php
@@ -60,7 +60,7 @@ include("Api.php");
          ?>
           
      </select>
-    <Label for ="departement">Departement:<label>
+    <Label >Departement:</Label>
      <select name="departement"> 
        <option value="blanc">Aucun filtre</option>';
          <?php
@@ -72,9 +72,10 @@ include("Api.php");
               }
         }
          ?>
-          
+         </select> 
   
         <input type="submit" value="valider">
+         
         </form>
              </div>
          
