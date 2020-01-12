@@ -28,6 +28,7 @@ include("Api.php");
     $region=$_POST["region"];
     $departement=$_POST["departement"];  
     for ($number = 0; $number <= count($arraysRecordsComplet)-1; $number++){
+        $urlFiltreComplet="https://data.enseignementsup-recherche.gouv.fr/api/records/1.0/search/?dataset=fr-esr-principaux-diplomes-et-formations-prepares-etablissements-publics&rows=800&facet=niveau_lib&facet=sect_disciplinaire_lib&facet=typ_diplome_lib&facet=reg_etab_lib&facet=dep_ins_lib&facet=etablissement_lib&refine.rentree_lib=2017-18";
         $boolAnnee=($annee==$arraysRecordsComplet[$number]["fields"]["niveau_lib"]||($annee=="blanc"));
         $boolDiscipline=($discipline==$arraysRecordsComplet[$number]["fields"]["sect_disciplinaire_lib"]||($discipline=="blanc"));
         $boolFormation=($formation==$arraysRecordsComplet[$number]["fields"]["typ_diplome_lib"]||($formation=="blanc"));
@@ -68,3 +69,6 @@ include("Api.php");
          ?>
 
               </script>
+ <?php
+include("footer.php");
+?>

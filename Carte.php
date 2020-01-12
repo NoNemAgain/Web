@@ -51,6 +51,6 @@ include("Api.php");
          </script>
          
      </div>
-    <footer>
-        <p>©Thomas DUONG</p>
-    </footer>
+    <?php
+include("footer.php");
+?>
