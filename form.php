@@ -3,10 +3,11 @@
 include("Api.php");
 
 ?>
+      <!--Filtres -->
   <div id="formulaire" >
        <form   method ="POST" Action ="Recherche.php">
 <h1>Recherche </h1>
-     
+     <!--Filtre année  -->
   <p>Chercher une formation</p>
      <Label >Année:</Label>
      <select name="annee"> 
@@ -20,6 +21,7 @@ include("Api.php");
         }
          ?>
      </select>
+           <!--Filtre Discipline  -->
        <Label >Discipline:</Label>
      <select name="discipline"> 
          <option value="blanc">Aucun filtre</option>';
@@ -33,8 +35,8 @@ include("Api.php");
         }
          ?>
      </select>
-         
-    <Label >Type de formation:</Label>
+          <!--Filtre formation  -->
+    <Label >Type de formation:</Label> 
      <select name="formation"> 
           <option value="blanc">Aucun filtre</option>';
          <?php
@@ -46,6 +48,7 @@ include("Api.php");
         }
          ?>
           </select>
+            <!--Filtre région  -->
     <Label >Region:</Label>
      <select name="region"> 
          <option value="blanc">Aucun filtre</option>';
@@ -60,6 +63,7 @@ include("Api.php");
          ?>
           
      </select>
+            <!--Filtre Département -->
     <Label >Departement:</Label>
      <select name="departement"> 
        <option value="blanc">Aucun filtre</option>';

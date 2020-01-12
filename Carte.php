@@ -15,6 +15,7 @@ include("Api.php");
         ?>
  <script>
       <?php
+    /* Requête effectué si le formulaire de l'index est rempli, affiche le résultat de la recherche*/
     if (isset($_POST["search"])&&(!(empty($_POST["search"])))){
         $search= $_POST["search"];
         for ($number = 0; $number <= count($arraysRecordsComplet)-1; $number++){
@@ -37,6 +38,7 @@ include("Api.php");
             }
         }
     }
+    /* Requête effectué si le formulaire de l'index est vide, affiche toute les écoles de carte */
     if(empty($_POST["search"])){
                for ($numberMap = 0; $numberMap <= count($arraysRecordsMap)-1; $numberMap++){
                           $nameMap =$arraysRecordsMap[$numberMap]["fields"]["uo_lib"];  

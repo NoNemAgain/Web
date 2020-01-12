@@ -15,7 +15,7 @@ include("Api.php");
    <?php  
     
       //records 
-   
+    //Requête effectué lors du remplissage du formulaire 
     if (isset($_POST["discipline"])&&isset($_POST["formation"])&&isset($_POST["region"])&&isset($_POST["departement"])&&isset($_POST["annee"])){ 
     if ($_POST["annee"]!="Non détaillé"||$_POST["annee"]!="blanc"){
     $annee= $_POST["annee"]+" année";
@@ -27,6 +27,7 @@ include("Api.php");
     $formation =$_POST["formation"];
     $region=$_POST["region"];
     $departement=$_POST["departement"];  
+         //Parcours des l'API des écoles avec leurs données  
     for ($number = 0; $number <= count($arraysRecordsComplet)-1; $number++){
         $urlFiltreComplet="https://data.enseignementsup-recherche.gouv.fr/api/records/1.0/search/?dataset=fr-esr-principaux-diplomes-et-formations-prepares-etablissements-publics&rows=800&facet=niveau_lib&facet=sect_disciplinaire_lib&facet=typ_diplome_lib&facet=reg_etab_lib&facet=dep_ins_lib&facet=etablissement_lib&refine.rentree_lib=2017-18";
         $boolAnnee=($annee==$arraysRecordsComplet[$number]["fields"]["niveau_lib"]||($annee=="blanc"));
@@ -37,6 +38,7 @@ include("Api.php");
         $bool =$boolAnnee&&$boolDiscipline&&$boolFormation&&$boolRegion&&$boolDepartement;
         $name =$arraysRecordsComplet[$number]["fields"]["etablissement_lib"];
         if ($bool){
+            //Parcours des l'API des maps 
                      for ($numberMap = 0; $numberMap <= count($arraysRecordsMap)-1; $numberMap++){
                           $nameMap =$arraysRecordsMap[$numberMap]["fields"]["uo_lib"];  
                           $boolSameName=($name==$nameMap);
