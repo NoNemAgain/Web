@@ -49,11 +49,11 @@ footer {
 
 #formulaire {
     float: left;
-    padding-left: 1%; 
+    padding-left: 1%;
     margin-right: 0.5%;
     margin-top: 0.5%;
-    
-    
+
+
 }
 
 
@@ -68,12 +68,12 @@ footer {
 label {
  margin-top:10px;
  display:block;
-   
+
  }
 .label_seul{
  margin-top:5%;
  display:block;
-   
+
  }
 select {
  margin-top:10px;
@@ -93,25 +93,25 @@ border-radius: 10px;
  width:60%;
 height: 10%;
  box-shadow:1px 1px 2px  #05053b    inset;
-    
+
  }
 .form_seul{
     float: left;
-    padding-left: 1%; 
+    padding-left: 1%;
     margin-right: 0.5%;
     margin-top: 0.5%;
     width: 100%;
     height: 50%;
-   
+
 }
 #formulaire_seul  {
-   
+
     margin-right: 20%;
     margin-left: 20%;
     margin-top: 10%;
-    
-    
-} 
+
+
+}
 }
 
 }

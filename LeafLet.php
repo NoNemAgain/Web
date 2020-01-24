@@ -2,7 +2,7 @@
 ?>
  <!--Création de la map à include si besoin    -->
  <div id ="mapid">
-    
+
     <script>
 
 
@@ -13,6 +13,5 @@
             id: 'mapbox.streets',
             accessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw'
         }).addTo(map);
-            
+
 </script>
-      

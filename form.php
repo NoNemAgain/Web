@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 include("Api.php");
 
@@ -10,7 +10,7 @@ include("Api.php");
      <!--Filtre année  -->
   <p>Chercher une formation</p>
      <Label >Année:</Label>
-     <select name="annee"> 
+     <select name="annee">
            <option value="blanc">Aucun filtre</option>';
          <?php
           for ($number = 0; $number <= count($facetsGrAnnee)  ; $number++)
@@ -23,10 +23,10 @@ include("Api.php");
      </select>
            <!--Filtre Discipline  -->
        <Label >Discipline:</Label>
-     <select name="discipline"> 
+     <select name="discipline">
          <option value="blanc">Aucun filtre</option>';
          <?php
-         
+
         for ($number = 0; $number <= count($facetsGrDiscipline); $number++)
          {
                 if(isset($facetsGrDiscipline[$number]["path"])){
@@ -36,12 +36,12 @@ include("Api.php");
          ?>
      </select>
           <!--Filtre formation  -->
-    <Label >Type de formation:</Label> 
-     <select name="formation"> 
+    <Label >Type de formation:</Label>
+     <select name="formation">
           <option value="blanc">Aucun filtre</option>';
          <?php
           for ($number =0; $number <= count($facetsGrFormation); $number++)
-         {  
+         {
               if(isset($facetsGrFormation[$number]["path"])){
              echo'   <option value="'.$facetsGrFormation[$number]["path"].'">'.$facetsGrFormation[$number]["path"].'</option>';
               }
@@ -50,10 +50,10 @@ include("Api.php");
           </select>
             <!--Filtre région  -->
     <Label >Region:</Label>
-     <select name="region"> 
+     <select name="region">
          <option value="blanc">Aucun filtre</option>';
          <?php
-       
+
           for ($number = 0; $number <= count($facetsGrRegion); $number++)
          {
                 if(isset($facetsGrRegion[$number]["path"])){
@@ -61,28 +61,24 @@ include("Api.php");
                 }
         }
          ?>
-          
+
      </select>
             <!--Filtre Département -->
     <Label >Departement:</Label>
-     <select name="departement"> 
+     <select name="departement">
        <option value="blanc">Aucun filtre</option>';
          <?php
-         
+
           for ($number = 0; $number <= count($facetsGrDep); $number++)
-         {    
+         {
               if(isset($facetsGrDep[$number]["path"])){
              echo' <option value="'.$facetsGrDep[$number]["path"].'">'.$facetsGrDep[$number]["path"].'</option>';
               }
         }
          ?>
-         </select> 
-  
+         </select>
+
         <input type="submit" value="valider">
-         
+
         </form>
              </div>
-         
-
-        
-        

@@ -1,4 +1,4 @@
-<?php 
+<?php
 include("header.html");
 ?>
 
@@ -11,7 +11,7 @@ include("header.html");
      <Label class= "label_authentification" ></label>
       <input type="text" name="search" />
         <input type="submit" value="valider">
-    </form>  
+    </form>
 </div>
 <footer>
         <p>©Thomas DUONG</p>

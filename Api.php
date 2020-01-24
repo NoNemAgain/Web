@@ -1,5 +1,5 @@
 <?php
-//Liens API et decode à include si besoin 
+//Liens API et decode à include si besoin
 
 // lien  : https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-principaux-diplomes-et-formations-prepares-etablissements-publics/information/
 //lien Coordonnée :https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-principaux-etablissements-enseignement-superieur/information/?disjunctive.type_d_etablissement
