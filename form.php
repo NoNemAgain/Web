@@ -1,17 +1,18 @@
 <?php
 
 include("Api.php");
-
+$hit = count($arrayComplet) ;
 ?>
-      <!--Filtres -->
   <div id="formulaire" >
        <form   method ="POST" Action ="Recherche.php">
 <h1>Recherche </h1>
-     <!--Filtre année  -->
+
   <p>Chercher une formation</p>
-     <Label >Année:</Label>
+           <Label >Nomre de résultat: <?php echo $hit;?></Label>
+
+     <Label >Année: * </Label>
      <select name="annee">
-           <option value="blanc">Aucun filtre</option>';
+           <option value="">Aucun filtre</option>';
          <?php
           for ($number = 0; $number <= count($facetsGrAnnee)  ; $number++)
          {
@@ -21,10 +22,9 @@ include("Api.php");
         }
          ?>
      </select>
-           <!--Filtre Discipline  -->
-       <Label >Discipline:</Label>
+       <Label >Discipline: *</Label>
      <select name="discipline">
-         <option value="blanc">Aucun filtre</option>';
+         <option value="">Aucun filtre</option>';
          <?php
 
         for ($number = 0; $number <= count($facetsGrDiscipline); $number++)
@@ -35,10 +35,10 @@ include("Api.php");
         }
          ?>
      </select>
-          <!--Filtre formation  -->
-    <Label >Type de formation:</Label>
+
+    <Label >Type de formation: *</Label>
      <select name="formation">
-          <option value="blanc">Aucun filtre</option>';
+          <option value="">Aucun filtre</option>';
          <?php
           for ($number =0; $number <= count($facetsGrFormation); $number++)
          {
@@ -48,10 +48,9 @@ include("Api.php");
         }
          ?>
           </select>
-            <!--Filtre région  -->
-    <Label >Region:</Label>
+    <Label >Region: *</Label>
      <select name="region">
-         <option value="blanc">Aucun filtre</option>';
+         <option value="">Aucun filtre</option>';
          <?php
 
           for ($number = 0; $number <= count($facetsGrRegion); $number++)
@@ -63,10 +62,9 @@ include("Api.php");
          ?>
 
      </select>
-            <!--Filtre Département -->
-    <Label >Departement:</Label>
+    <Label >Departement: *</Label>
      <select name="departement">
-       <option value="blanc">Aucun filtre</option>';
+       <option value="">Aucun filtre</option>';
          <?php
 
           for ($number = 0; $number <= count($facetsGrDep); $number++)
