@@ -107,7 +107,7 @@ $etab_liste = array();
                 
         
        
-            /*array_unique($etab_liste);
+/*array_unique($etab_liste);
             $etab_map_unarray_unique($etab_map);*/
             addToTable($etab_liste, $etab_map); 
     ?>
