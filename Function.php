@@ -1,5 +1,5 @@
 <?php
-
+ 
 function sameEtablissement($arraysRecordsComplet,$search,$number){
     $annee =$arraysRecordsComplet[$number]["fields"]["niveau_lib"];
     $discipline=$arraysRecordsComplet[$number]["fields"]["sect_disciplinaire_lib"];
@@ -100,7 +100,7 @@ function addToTable($etab_liste, $etab_map) {
          
         foreach ($etab_map as $l) { 
             if ( $l->id== $e->id ) { 
-               echo "<a href="/".$l->url."/">Aller sur le site</a>";
+               echo '<a href="'.$l->url."'>Aller sur le site</a>';
             } 
         } 
         

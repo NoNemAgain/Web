@@ -26,7 +26,11 @@ class Etablissement
     
     
     
-    
+   /* public function popUp(){
+        echo'<script>';
+    echo"alert('API ne marche pas' );";
+     echo'  </script>';
+    }*/
     public function search($annee,$discipline,$formation,$region,$departement){
         return anneeSearch($annee)&&disciplineSearch($discipline)&&formationSearch($formation)&&regionSearch($region)&&departementSearch($departement);
                         }
