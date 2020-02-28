@@ -1,6 +1,6 @@
-<?php 
+<?php
 class Etablissement
-{   
+{
     public $id;
     public $_region;
     public $_dep ;
@@ -8,8 +8,8 @@ class Etablissement
     public $_annee;
     public $_formation;
     public $_nom;
-    
-    
+
+
 
     public function search($annee,$discipline,$formation,$region,$departement){
         return anneeSearch($annee)&&disciplineSearch($discipline)&&formationSearch($formation)&&regionSearch($region)&&departementSearch($departement);
@@ -29,6 +29,6 @@ class Etablissement
      public function departementSearch($departement){
         return $boolDepartement=(($departement==$this->_dep)||($departement=="blanc"));
     }
-    
+
 }
 ?>
