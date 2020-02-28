@@ -99,8 +99,9 @@ function addToTable($etab_liste, $etab_map) {
         echo "<td>"; 
          
         foreach ($etab_map as $l) { 
-            if ( $l->id== $e->id ) { 
-               echo "<a href="/".$l->url."/">Aller sur le site</a>";
+            if ( $l->nom==$e->nom ) { 
+                
+               echo '<a href="'.$l->url.'">Aller sur le site</a>';
             } 
         } 
         

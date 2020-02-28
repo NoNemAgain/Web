@@ -60,19 +60,19 @@ $etab_liste = array();
                           $nameMap =$arraysRecordsMap[$numberMap]["fields"]["uo_lib"];  
                        if(checkingCoor($arraysRecordsMap,$numberMap)&&boolSameName($name,$nameMap)){
                                        $isAlreadyHere = 0; 
-                    $loc = new Map; 
-                      $loc->nom =$arraysRecordsMap[$numberMap]["fields"]["uai"];    
-                    $loc->nom =$arraysRecordsMap[$numberMap]["fields"]["uo_lib"]; 
-                    $loc->coordonnees = $arraysRecordsMap[$numberMap]["fields"]["coordonnees"]; 
-                    $loc->url = $arraysRecordsMap[$numberMap]["fields"]["url"]; 
+                    $map = new Map; 
+                      $map->nom =$arraysRecordsMap[$numberMap]["fields"]["uai"];    
+                    $map->nom =$arraysRecordsMap[$numberMap]["fields"]["uo_lib"]; 
+                    $map->coordonnees = $arraysRecordsMap[$numberMap]["fields"]["coordonnees"]; 
+                    $map->url = $arraysRecordsMap[$numberMap]["fields"]["url"]; 
 
 
-                    foreach ($etab_map as $l) { 
-                        if ($l==$loc) { 
+                    foreach ($etab_map as $m) { 
+                        if ($m==$map) { 
                             $isAlreadyHere = 1; } 
                         } 
                         if ($isAlreadyHere == 0) { 
-                            array_push($etab_map,$loc); 
+                            array_push($etab_map,$map); 
                         } 
                           leafMark($numberMap,$arraysRecordsMap,$nameMap);
                            
