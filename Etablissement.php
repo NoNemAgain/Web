@@ -10,7 +10,23 @@ class Etablissement
     public $_nom;
 
 
-
+   /*   public function __construct($id,$nom, $region,$dep,$discipline,$annee,$formation) // Constructeur demandant 2 paramètres
+  {
+    
+    
+    $this->_id = $id;
+    $this->_nom = $nom;
+    $this->_region = $region;
+    $this->_dep = $dep;
+    $this->_discipline = $discipline;
+    $this->_annee = $annee;
+    $this->_formation = $formation;
+  }*/
+   
+    
+    
+    
+    
     public function search($annee,$discipline,$formation,$region,$departement){
         return anneeSearch($annee)&&disciplineSearch($discipline)&&formationSearch($formation)&&regionSearch($region)&&departementSearch($departement);
                         }
