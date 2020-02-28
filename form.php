@@ -1,78 +1,59 @@
 <?php
 
 include("Api.php");
-$hit = count($arrayComplet) ;
+function generateDropDown($facetsGr){
+     for ($number = 0; $number <= count($facetsGr)  ; $number++)
+         {
+                 if(isset($facetsGr[$number]["path"])){
+            echo '<option value="'.$facetsGr[$number]["path"].'">'.$facetsGr[$number]["path"].'</option>';
+                 }
+        }
+}
 ?>
+      <!--Filtres -->
   <div id="formulaire" >
        <form   method ="POST" Action ="Recherche.php">
 <h1>Recherche </h1>
-
-  <p>Chercher une formation</p>
-           <Label >Nomre de résultat: <?php echo $hit;?></Label>
-
-     <Label >Année: * </Label>
+     <!--Filtre année  -->
+  <p>Chercher une formation </p>
+     <Label >Année: *</Label>
      <select name="annee">
-           <option value="">Aucun filtre</option>';
+           <option value="blanc">Aucun filtre</option>';
          <?php
-          for ($number = 0; $number <= count($facetsGrAnnee)  ; $number++)
-         {
-                 if(isset($facetsGrAnnee[$number]["path"])){
-            echo '<option value="'.$facetsGrAnnee[$number]["path"].'">'.$facetsGrAnnee[$number]["path"].'</option>';
-                 }
-        }
+        generateDropDown($facetsGrAnnee) ;
          ?>
      </select>
+           <!--Filtre Discipline  -->
        <Label >Discipline: *</Label>
      <select name="discipline">
-         <option value="">Aucun filtre</option>';
+         <option value="blanc">Aucun filtre</option>';
          <?php
-
-        for ($number = 0; $number <= count($facetsGrDiscipline); $number++)
-         {
-                if(isset($facetsGrDiscipline[$number]["path"])){
-             echo'   <option value="'.$facetsGrDiscipline[$number]["path"].'">'.$facetsGrDiscipline[$number]["path"].'</option>';
-                }
-        }
+          generateDropDown($facetsGrDiscipline);
          ?>
      </select>
-
+          <!--Filtre formation  -->
     <Label >Type de formation: *</Label>
      <select name="formation">
-          <option value="">Aucun filtre</option>';
+          <option value="blanc">Aucun filtre</option>';
          <?php
-          for ($number =0; $number <= count($facetsGrFormation); $number++)
-         {
-              if(isset($facetsGrFormation[$number]["path"])){
-             echo'   <option value="'.$facetsGrFormation[$number]["path"].'">'.$facetsGrFormation[$number]["path"].'</option>';
-              }
-        }
+         generateDropDown($facetsGrFormation);
          ?>
           </select>
+            <!--Filtre région  -->
     <Label >Region: *</Label>
      <select name="region">
-         <option value="">Aucun filtre</option>';
+         <option value="blanc">Aucun filtre</option>';
          <?php
-
-          for ($number = 0; $number <= count($facetsGrRegion); $number++)
-         {
-                if(isset($facetsGrRegion[$number]["path"])){
-             echo'   <option value="'.$facetsGrRegion[$number]["path"].'">'.$facetsGrRegion[$number]["path"].'</option>';
-                }
-        }
+                generateDropDown($facetsGrRegion);
          ?>
 
      </select>
+            <!--Filtre Département -->
     <Label >Departement: *</Label>
      <select name="departement">
-       <option value="">Aucun filtre</option>';
+       <option value="blanc">Aucun filtre</option>';
          <?php
-
-          for ($number = 0; $number <= count($facetsGrDep); $number++)
-         {
-              if(isset($facetsGrDep[$number]["path"])){
-             echo' <option value="'.$facetsGrDep[$number]["path"].'">'.$facetsGrDep[$number]["path"].'</option>';
-              }
-        }
+             generateDropDown($facetsGrDep);
          ?>
          </select>
 
@@ -80,3 +61,7 @@ $hit = count($arrayComplet) ;
 
         </form>
              </div>
+
+
+
+        

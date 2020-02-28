@@ -1,6 +1,5 @@
 <?php
 ?>
- <!--Création de la map à include si besoin    -->
  <div id ="mapid">
 
     <script>
@@ -15,3 +14,4 @@
         }).addTo(map);
 
 </script>
+      

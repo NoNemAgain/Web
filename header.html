@@ -1,5 +1,4 @@
 <!doctype html>
- <!--Création du titre à include avant chaque page   -->
 <html lang="fr">
       <title>THOMAS DUONG DEVELOPPEMENT WEB</title>
 
@@ -13,6 +12,22 @@
       src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
    integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
    crossorigin=""></script>
+
+    <script
+              src="https://code.jquery.com/jquery-3.4.1.js"
+              integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+              crossorigin="anonymous"></script>
+
+    <!-- DataTable CSS -->
+    <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
+
+    <!-- DataTable JavaScript -->
+    <script type="text/javascript" src="DataTables/datatables.min.js"></script>
+    <script>
+        $(document).ready( function () {
+            $('#table').DataTable();
+        } );
+    </script>
 
 
 
@@ -30,3 +45,5 @@
         </ul>
      </div>
 </nav>
+
+ 

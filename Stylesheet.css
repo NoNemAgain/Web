@@ -1,3 +1,122 @@
+$primary: #11998e;
+$secondary: #38ef7d;
+$white: #fff;
+$gray: #9b9b9b;
+
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+body {
+ font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.5rem;
+  background-color:#222222;
+}
+
+h1 {
+  font-size:3em;
+  font-weight: 300;
+  line-height:1em;
+  text-align: left;
+  color: #4DC3FA;
+}
+
+h2 {
+  font-size:1em;
+  font-weight: 300;
+  text-align: center;
+  display: block;
+  line-height:1em;
+  padding-bottom: 2em;
+  color: #FB667A;
+}
+
+h2 a {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #FB667A;
+  text-decoration: none;
+}
+
+.blue { color: #185875; }
+.yellow { color: #FFF842; }
+
+.container th h1 {
+	  font-weight: bold;
+	  font-size: 1em;
+  text-align: left;
+  color: white;
+}
+
+.container td {
+	  font-weight: normal;
+	  font-size: 1em;
+  -webkit-box-shadow: 0 2px 2px -2px white;
+	   -moz-box-shadow: 0 2px 2px -2px white;
+	        box-shadow: 0 2px 2px -2px white;
+}
+
+.container {
+	  text-align: left;
+	  overflow: hidden;
+	  width: 80%;
+	  margin: 0 auto;
+  display: table;
+  padding: 0 0 8em 0;
+}
+
+.container td, .container th {
+	  padding-bottom: 2%;
+	  padding-top: 2%;
+  padding-left:2%;
+}
+
+/* Background-color of the odd rows */
+.container tr:nth-child(odd) {
+	  background-color: #e7f3f3;
+}
+
+/* Background-color of the even rows */
+.container tr:nth-child(even) {
+	  background-color: #e7f3f3;
+}
+
+.container th {
+	  background-color: #e7f3f3;
+}
+
+.container td:first-child { color: #4DC3FA; }
+
+.container tr:hover {
+   background-color: #2c3e50;
+-webkit-box-shadow: 0 6px 6px -6px #2c3e50;
+	   -moz-box-shadow: 0 6px 6px -6px #2c3e50;
+	        box-shadow: 0 6px 6px -6px #2c3e50;
+}
+
+.container td:hover {
+  background-color: #FFF842;
+  color: #2c3e50;
+  font-weight: bold;
+
+  box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+  transform: translate3d(6px, -6px, 0);
+
+  transition-delay: 0s;
+	  transition-duration: 0.4s;
+	  transition-property: all;
+  transition-timing-function: line;
+}
+
+@media (max-width: 800px) {
+.container td:nth-child(4),
+.container th:nth-child(4) { display: none; }
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -11,12 +130,7 @@ ul {
 li {
   float: left;
 }
-body{
-    font-family: Arial,
-    color:black;
-    background-color:#edf4ff;
 
-}
 form {
     /* Uniquement centrer le formulaire sur la page */
     margin: 10 px;
@@ -26,6 +140,7 @@ form {
     border: 1px solid #CCC;
     border-radius: 10px;
     background-color:   #f8fbff   ;
+
 }
 
 li a {
@@ -52,8 +167,12 @@ footer {
     padding-left: 1%;
     margin-right: 0.5%;
     margin-top: 0.5%;
-
-
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px  25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
 }
 
 
@@ -68,16 +187,14 @@ footer {
 label {
  margin-top:10px;
  display:block;
+ top: 0;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: $gray;
 
  }
-.label_seul{
- margin-top:5%;
- display:block;
 
- }
-select {
- margin-top:10px;
- }
+
 input[type=submit], input[type=reset] {
  width:20%;
 
@@ -86,13 +203,20 @@ input[type=submit], input[type=reset] {
 float: right;
 margin-bottom: 0.5%;
  }
-input, textarea, select {
+input, textarea, select, option {
  padding:3px;
- border:1px solid  #05053b ;
+ border:1px solid white ;
 border-radius: 10px;
  width:60%;
 height: 10%;
  box-shadow:1px 1px 2px  #05053b    inset;
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
 
  }
 .form_seul{
@@ -102,6 +226,11 @@ height: 10%;
     margin-top: 0.5%;
     width: 100%;
     height: 50%;
+      top: 0;
+      display: block;
+      transition: 0.2s;
+      font-size: 1rem;
+      color: $gray;
 
 }
 #formulaire_seul  {
@@ -112,6 +241,10 @@ height: 10%;
 
 
 }
-}
+
+
+
+
+
 
 }
