@@ -13,7 +13,8 @@ include("Etablissement.php");
 include("Map.php");
 
 $etab_liste = array(); 
- $etab_map = array();   
+ $etab_map = array();
+ $viewList = array(); 
 
 
     ?> 
@@ -129,6 +130,7 @@ $etab_liste = array();
             addToTable($etab_liste, $etab_map); 
             $_SESSION['etab_liste']=$etab_liste;
             $_SESSION['etab_map']=$etab_map;
+            $_SESSION['viewList']=$viewList;
     ?>
                             </tbody>
         </table>

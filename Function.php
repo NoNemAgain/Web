@@ -1,5 +1,5 @@
 <?php
- 
+
 function sameEtablissement($arraysRecordsComplet,$search,$number){
     $annee =$arraysRecordsComplet[$number]["fields"]["niveau_lib"];
     $discipline=$arraysRecordsComplet[$number]["fields"]["sect_disciplinaire_lib"];
@@ -21,7 +21,8 @@ function sameEtablissement($arraysRecordsComplet,$search,$number){
         /*$string=$nameMap . "<br> <a href='".$arraysRecordsMap[$numberMap]["fields"]["url"]."' onclick="javascript:countclick(".$arraysRecordsMap[$numberMap]["fields"]["url"].'");">" .$arraysRecordsMap[$numberMap]["fields"]["url"] . */ /*"</a>
                href='".$arraysRecordsMap[$numberMap]["fields"]["element_wikidata"]."'>En savoir plus</a>";
                 echo'L.marker(['.$arraysRecordsMap[$numberMap]["fields"]["coordonnees"][0].','.$arraysRecordsMap[$numberMap]["fields"]["coordonnees"][1].'], ).addTo(map).bindPopup("'.$string.'");';*/
-         $string = $nameMap . "<br> <a href='" . $arraysRecordsMap[$numberMap]["fields"]["url"] . "'target='_blank'>" .$arraysRecordsMap[$numberMap]["fields"]["url"] . "</a>" . "<br> <a href='".$arraysRecordsMap[$numberMap]["fields"]["element_wikidata"]."'>En savoir plus</a>";
+         $string = $nameMap . "<br> <a href='" . $arraysRecordsMap[$numberMap]["fields"]["url"] . "'target='_blank' >" .$arraysRecordsMap[$numberMap]["fields"]["url"] . "</a>" . "<br> <a href='".$arraysRecordsMap[$numberMap]["fields"]["element_wikidata"]."' >En savoir plus</a>";
+         
                 echo'L.marker(['.$arraysRecordsMap[$numberMap]["fields"]["coordonnees"][0].','.$arraysRecordsMap[$numberMap]["fields"]["coordonnees"][1].'], ).addTo(map).bindPopup("'.$string.'");';
     }
     function checkingCoor($arraysRecordsMap,$numberMap){
@@ -91,14 +92,8 @@ function addToTable($etab_liste, $etab_map) {
     foreach ($etab_liste as $e) { 
        
         echo "<tr>"; 
-         echo "<td>" ;
-       
-        echo '<a href="Fiche_Etablissement.php">'.$e->nom.'</a>';
-        echo   "</td>";
-        echo "<td>" ;
-        
-        echo '<a href="Fiche_Formation.php">'.$e->formation.'</a>';
-        echo   "</td>"; 
+        echo "<td>".$e->nom."</td>";
+        echo "<td>".$e->formation."</td>"; 
         echo "<td>".$e->annee."</td>";
         echo "<td>".$e->discipline."</td>";    
         echo "<td>".$e->region."</td>";
@@ -130,5 +125,16 @@ function addToTable($etab_liste, $etab_map) {
         
     }
 }
-
+function onClick($url ){;
+     if (!(isset($_SESSION[$url])))
+                 {
+                             $_SESSION[$url] =0;
+                }
+                else{
+                      $_SESSION[$url]= $_SESSION[$url]+1 ;
+                }
+}
+function echoCoucou(){
+    echo'coucou';
+}
    ?>
