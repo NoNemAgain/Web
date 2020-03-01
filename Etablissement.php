@@ -13,6 +13,11 @@ class Etablissement
     public $_type2;
     public $_sigle;
     public $_url;
+    public $_hommes ;
+    public $_effectif; 
+    public $_femmes ;
+    public $_libelle;
+    public $_diplome;
 
 
    /*   public function __construct($id,$nom, $region,$dep,$discipline,$annee,$formation) // Constructeur demandant 2 paramètres

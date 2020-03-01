@@ -54,6 +54,12 @@ $etab_liste = array();
         $etab->type =$arraysRecordsComplet[$number]["fields"]["etablissement_type_lib"];
         $etab->type2 =$arraysRecordsComplet[$number]["fields"]["etablissement_type2"];
         $etab->sigle =$arraysRecordsComplet[$number]["fields"]["etablissement_sigle"];
+        $etab->hommes =$arraysRecordsComplet[$number]["fields"]["hommes"];
+        $etab->effectif =$arraysRecordsComplet[$number]["fields"]["effectif"];
+        $etab->femmes =$arraysRecordsComplet[$number]["fields"]["femmes"];
+        $etab->libelle =$arraysRecordsComplet[$number]["fields"]["libelle_intitule_1"];
+        $etab->diplome =$arraysRecordsComplet[$number]["fields"]["diplome_rgp"];
+          
             
         
             
@@ -105,6 +111,8 @@ $etab_liste = array();
                     <td>Département</td>
                     <td>Region</td>
                     <td>Site</td>
+                    <td>FicheForm</td>
+                    <td>FicheEtabl</td>
                 </tr>
             </thead>
             
