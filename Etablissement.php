@@ -8,6 +8,11 @@ class Etablissement
     public $_annee;
     public $_formation;
     public $_nom;
+    public $_academie;
+    public $_type;
+    public $_type2;
+    public $_sigle;
+    public $_url;
 
 
    /*   public function __construct($id,$nom, $region,$dep,$discipline,$annee,$formation) // Constructeur demandant 2 paramètres

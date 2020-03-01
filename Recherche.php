@@ -11,8 +11,10 @@ include("Api.php");
     include("Function.php");
 include("Etablissement.php");
 include("Map.php");
+
 $etab_liste = array(); 
  $etab_map = array();   
+
 
     ?> 
 </div> 
@@ -48,6 +50,13 @@ $etab_liste = array();
         $etab->discipline=$arraysRecordsComplet[$number]["fields"]["sect_disciplinaire_lib"];  
         $etab->dep =$arraysRecordsComplet[$number]["fields"]["dep_ins_lib"]; 
         $etab->region =$arraysRecordsComplet[$number]["fields"]["reg_etab_lib"]; 
+        $etab->academie =$arraysRecordsComplet[$number]["fields"]["aca_ins_lib"];
+        $etab->type =$arraysRecordsComplet[$number]["fields"]["etablissement_type_lib"];
+        $etab->type2 =$arraysRecordsComplet[$number]["fields"]["etablissement_type2"];
+        $etab->sigle =$arraysRecordsComplet[$number]["fields"]["etablissement_sigle"];
+            
+        
+            
         
         foreach ($etab_liste as $e) { 
             if ($e==$etab) { 
@@ -110,6 +119,8 @@ $etab_liste = array();
 /*array_unique($etab_liste);
             $etab_map_unarray_unique($etab_map);*/
             addToTable($etab_liste, $etab_map); 
+            $_SESSION['etab_liste']=$etab_liste;
+            $_SESSION['etab_map']=$etab_map;
     ?>
                             </tbody>
         </table>
