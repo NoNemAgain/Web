@@ -92,11 +92,11 @@ function addToTable($etab_liste, $etab_map) {
        
         echo "<tr>"; 
          echo "<td>" ;
-        $_SESSION["etablissement"]=$e->id;
+       
         echo '<a href="Fiche_Etablissement.php">'.$e->nom.'</a>';
         echo   "</td>";
         echo "<td>" ;
-        $_SESSION["formation"]=$e->formation;
+        
         echo '<a href="Fiche_Formation.php">'.$e->formation.'</a>';
         echo   "</td>"; 
         echo "<td>".$e->annee."</td>";
@@ -113,7 +113,8 @@ function addToTable($etab_liste, $etab_map) {
 
         echo "</td>";  
          echo "<td>"; 
-       echo ' <form class="form_button" form method=POST action="Fiche_Formation.php"  > 
+       echo ' <form class="form_button" form method=POST action="Fiche_Formation.php"  >
+       <input type ="hidden" name="id" value="'.$e->id.'"/>
        <input type ="hidden" name="formation" value="'.$e->formation.'"/>
       <button type="submit">Voir plus</button>
       </form> ';

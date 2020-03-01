@@ -50,15 +50,36 @@ session_start();
             <tbody>
                 <?php 
     
-                
-       
+               $id = $_POST["id"];
+                   
+
+            
+
+
+                 
                 
         
        
 /*array_unique($etab_liste);
             $etab_map_unarray_unique($etab_map);*/
-            etabTable($_SESSION['etab_liste'], $_SESSION['etab_map'],$_POST["id"]); 
+            etabTable($_SESSION['etab_liste'], $_SESSION['etab_map'],$id); 
     ?>
                             </tbody>
         </table>
+    <?php 
+   
+    if (!(isset($_SESSION[$id])))
+                 {
+                             $_SESSION[$id] =0;
+                }
+                else{
+                      $_SESSION[$id]= $_SESSION[$id]+1 ;
+                }
+    echo'<img src="Image/Oeil.png" alt="Oeil" align="middle" class="picture"/>';
+    echo '  View: ';
+    
+    echo  $_SESSION[$id];
+    
+
+        ?>
 </div>

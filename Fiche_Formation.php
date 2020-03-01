@@ -52,7 +52,8 @@ session_start();
             
             <tbody>
                 <?php 
-          
+            $id = $_POST["id"];
+            $formation = $_POST["formation"]; 
        
                 
         
@@ -63,4 +64,19 @@ session_start();
     ?>
                             </tbody>
         </table>
+    <?php 
+   
+    if (!(isset($_SESSION[$formation.$id])))
+                 {
+                             $_SESSION[$formation.$id] =0;
+                }
+                else{
+                      $_SESSION[$formation.$id]= $_SESSION[$formation.$id]+1 ;
+                }
+    echo'<img src="Image/Oeil.png" alt="Oeil" align="middle" class="picture"/>';
+    echo 'View: ';
+    echo  $_SESSION[$formation.$id];
+    
+
+        ?>
 </div>

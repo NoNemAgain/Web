@@ -208,6 +208,14 @@ footer {
 
 
 }
+.picture {
+
+  margin-left: auto;
+  margin-right: auto;
+    
+  width: 2%;
+height: 2%;
+}
 label {
  margin-top:10px;
  display:block;
