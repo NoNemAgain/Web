@@ -113,14 +113,14 @@ function addToTable($etab_liste, $etab_map) {
 
         echo "</td>";  
          echo "<td>"; 
-       echo ' <form class="form_button" form method="POST" action="Fiche_Formation.php"  > 
+       echo ' <form class="form_button" form method=POST action="Fiche_Formation.php"  > 
        <input type ="hidden" name="formation" value="'.$e->formation.'"/>
       <button type="submit">Voir plus</button>
       </form> ';
            echo "</td>";
                  echo "<td>"; 
       
-     echo ' <form class="form_button" form method="POST" action="Fiche_Etablissement.php"  > 
+     echo ' <form class="form_button" form method=POST action="Fiche_Etablissement.php"  > 
        <input type ="hidden" name="id" value="'.$e->id.'"/>
       <button type="submit">Voir plus</button>
       </form> ';

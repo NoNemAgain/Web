@@ -4,12 +4,13 @@ include("header.html");
 include("Api.php");
 include("Etablissement.php");
 include("Map.php");
-function formTable($etab_liste, $etab_map,$etablissement) { 
+function formTable($etab_liste, $etab_map,$formation) { 
     foreach ($etab_liste as $e) { 
-        if  ($e->id ==$etablissement){
+        if  ($e->formation ==$formation){
 
         echo "<tr>"; 
         echo "<td>".$e->nom."</td>";
+        echo "<td>".$e->formation."</td>";
         echo "<td>".$e->effectif."</td>";    
         echo "<td>".$e->hommes."</td>";
         echo "<td>".$e->femmes."</td>";
@@ -39,6 +40,7 @@ session_start();
             <thead>
                 <tr>                        
                     <td>Nom</td>
+                    <td>Formation</td>
                     <td>Effectif</td>
                     <td>Homme</td>
                     <td>Femmes</td>
@@ -51,7 +53,6 @@ session_start();
             <tbody>
                 <?php 
           
-                
        
                 
         

@@ -23,7 +23,9 @@ function etabTable($etab_liste, $etab_map,$etablissement) {
             } 
         }  
         echo "</tr>"; 
+             break;
         }
+       
     }
 }
 
@@ -32,6 +34,7 @@ session_start();
 
 
 ?>
+
 <div class= "container">
     <table id="table"> 
             <thead>
@@ -46,7 +49,7 @@ session_start();
             
             <tbody>
                 <?php 
-          
+    
                 
        
                 
