@@ -111,8 +111,8 @@ $etab_liste = array();
                     <td>Département</td>
                     <td>Region</td>
                     <td>Site</td>
-                    <td>FicheForm</td>
-                    <td>FicheEtabl</td>
+                    <td>Fiche Formation</td>
+                    <td>Fiche Etablissement</td>
                 </tr>
             </thead>
             
