@@ -54,7 +54,7 @@ session_start();
        
 /*array_unique($etab_liste);
             $etab_map_unarray_unique($etab_map);*/
-            etabTable($_SESSION['etab_liste'], $_SESSION['etab_map'],$_SESSION['etablissement']); 
+            etabTable($_SESSION['etab_liste'], $_SESSION['etab_map'],$_POST["id"]); 
     ?>
                             </tbody>
         </table>

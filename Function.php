@@ -92,33 +92,39 @@ function addToTable($etab_liste, $etab_map) {
        
         echo "<tr>"; 
          echo "<td>" ;
-        $_SESSION[$e->id]=$e->id;
+        $_SESSION["etablissement"]=$e->id;
         echo '<a href="Fiche_Etablissement.php">'.$e->nom.'</a>';
         echo   "</td>";
         echo "<td>" ;
-        $_SESSION[$e->formation]=$e->formation;
+        $_SESSION["formation"]=$e->formation;
         echo '<a href="Fiche_Formation.php">'.$e->formation.'</a>';
         echo   "</td>"; 
         echo "<td>".$e->annee."</td>";
         echo "<td>".$e->discipline."</td>";    
         echo "<td>".$e->region."</td>";
         echo "<td>".$e->dep."</td>";
-       /* echo'<form  method ="POST" Action ="Fiche_Etablissement.php">
-              
-          <input type ="hidden" name="table" value="'.$table.'"/>
-          <input type="submit" value="valider">
-         </body>
-         </form>';*/
         echo "<td>"; 
-         
         foreach ($etab_map as $l) { 
             if ( $l->nom==$e->nom ) { 
                 
                echo '<a href="'.$l->url.'">Aller sur le site</a>';
             } 
         } 
-        
-        echo "</td>"; 
+
+        echo "</td>";  
+         echo "<td>"; 
+       echo ' <form class="form_button" form method="POST" action="Fiche_Formation.php"  > 
+       <input type ="hidden" name="formation" value="'.$e->formation.'"/>
+      <button type="submit">Click</button>
+      </form> ';
+           echo "</td>";
+                 echo "<td>"; 
+      
+     echo ' <form class="form_button" form method="POST" action="Fiche_Etablissement.php"  > 
+       <input type ="hidden" name="id" value="'.$e->id.'"/>
+      <button type="submit">Click</button>
+      </form> ';
+           echo "</td>"; 
         echo "</tr>"; 
         
     }

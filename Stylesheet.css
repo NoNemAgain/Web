@@ -153,6 +153,14 @@ li a {
 	min-width: 80px;
 	margin: auto;
 }
+form_button {
+    height: auto;
+    width: auto;
+    text-align: center;
+    background-color: #e7f3f3   ;
+}
+
+
 p {
      font-family: cursive;
     font-size-adjust: auto;

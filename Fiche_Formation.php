@@ -58,7 +58,7 @@ session_start();
        
 /*array_unique($etab_liste);
             $etab_map_unarray_unique($etab_map);*/
-            formTable($_SESSION['etab_liste'], $_SESSION['etab_map'],$_SESSION['formation']); 
+            formTable($_SESSION['etab_liste'], $_SESSION['etab_map'],$_POST["formation"]); 
     ?>
                             </tbody>
         </table>
