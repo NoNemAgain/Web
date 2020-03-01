@@ -4,10 +4,10 @@ include("header.html");
 include("Api.php");
 include("Etablissement.php");
 include("Map.php");
+// permet de créer le tableau de la formation
 function formTable($etab_liste, $etab_map,$formation) { 
     foreach ($etab_liste as $e) { 
         if  ($e->formation ==$formation){
-
         echo "<tr>"; 
         echo "<td>".$e->nom."</td>";
         echo "<td>".$e->formation."</td>";
@@ -17,14 +17,11 @@ function formTable($etab_liste, $etab_map,$formation) {
         echo "<td>".$e->libelle."</td>";
         echo "<td>".$e->diplome."</td>";
         echo "<td>"; 
-         
-        
-         foreach ($etab_map as $l) { 
+        foreach ($etab_map as $l) { 
             if ( $l->nom==$e->nom ) { 
-                
                echo '<a href="'.$l->url.'">Aller sur le site</a>';
-            } 
-        }  
+                } 
+            }  
         echo "</tr>"; 
         }
     }
@@ -35,8 +32,9 @@ session_start();
 
 
 ?>
-<div class= "container">
-    <table id="table"> 
+     <!-- Balise pour le tableau-->
+    <div class= "container">
+        <table id="table"> 
             <thead>
                 <tr>                        
                     <td>Nom</td>
@@ -54,21 +52,15 @@ session_start();
                 <?php 
             $id = $_POST["id"];
             $formation = $_POST["formation"]; 
-       
-                
-        
-       
-/*array_unique($etab_liste);
-            $etab_map_unarray_unique($etab_map);*/
             formTable($_SESSION['etab_liste'], $_SESSION['etab_map'],$_POST["formation"]); 
     ?>
-                            </tbody>
+            </tbody>
         </table>
     <?php 
-   
+// permet de créer, d'incrémenter le compteur de vue
     if (!(isset($_SESSION[$formation.$id])))
                  {
-                             $_SESSION[$formation.$id] =0;
+                             $_SESSION[$formation.$id] =1;
                 }
                 else{
                       $_SESSION[$formation.$id]= $_SESSION[$formation.$id]+1 ;

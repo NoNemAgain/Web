@@ -1,14 +1,15 @@
 <?php
 
 include("Api.php");
+// fonction permettant de générer toutes les listes déroulantes
 function generateDropDown($facetsGr){
      for ($number = 0; $number <= count($facetsGr)  ; $number++)
-         {
-                 if(isset($facetsGr[$number]["path"])){
+        {
+        if(isset($facetsGr[$number]["path"])){
             echo '<option value="'.$facetsGr[$number]["path"].'">'.$facetsGr[$number]["path"].'</option>';
-                 }
+            }
         }
-}
+    }
 ?>
       <!--Filtres -->
   <div id="formulaire" >

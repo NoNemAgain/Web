@@ -3,24 +3,18 @@ include("header.html");
 include("Api.php");
 ?>
 
-
-  
-    <?php
-    include("form.php");
- include("LeafLet.php");
-    include("Function.php");
+<?php
+include("form.php");
+include("LeafLet.php");
+include("Function.php");
 include("Etablissement.php");
 include("Map.php");
-
+/* Création des listes stockants les informations des etablissement, coordonnées*/
 $etab_liste = array(); 
- $etab_map = array();
- $viewList = array(); 
-
-
-    ?> 
+$etab_map = array();
+?> 
 </div> 
-
-      <script>
+    <script>
    <?php  
       //records 
     //Requête effectué lors du remplissage du formulaire 
@@ -42,7 +36,8 @@ $etab_liste = array();
        
         if (sameEtablissementForm($arraysRecordsComplet,$number,$annee,$discipline,$formation,$region,$departement)){
             //Parcours des l'API des maps 
-             $isAlreadyHere = 0; 
+            /* Instanciation des établissements */
+            $isAlreadyHere = 0; 
         $etab = new Etablissement; 
         $etab->id= $arraysRecordsComplet[$number]["fields"]["etablissement"];
         $etab->nom =$arraysRecordsComplet[$number]["fields"]["etablissement_lib"]; 
@@ -60,47 +55,43 @@ $etab_liste = array();
         $etab->femmes =$arraysRecordsComplet[$number]["fields"]["femmes"];
         $etab->libelle =$arraysRecordsComplet[$number]["fields"]["libelle_intitule_1"];
         $etab->diplome =$arraysRecordsComplet[$number]["fields"]["diplome_rgp"];
-          
-            
-        
-            
-        
+        /*Vérification si l'établissement est déjà présent dans la liste */
         foreach ($etab_liste as $e) { 
             if ($e==$etab) { 
-                $isAlreadyHere = 1; } 
+                $isAlreadyHere = 1; 
             } 
-            if ($isAlreadyHere == 0) { 
-                array_push($etab_liste,$etab); 
-            }
-                     for ($numberMap = 0; $numberMap <= count($arraysRecordsMap)-1; $numberMap++){
-                          $nameMap =$arraysRecordsMap[$numberMap]["fields"]["uo_lib"];  
-                       if(checkingCoor($arraysRecordsMap,$numberMap)&&boolSameName($name,$nameMap)){
-                                       $isAlreadyHere = 0; 
-                    $map = new Map; 
-                      $map->nom =$arraysRecordsMap[$numberMap]["fields"]["uai"];    
-                    $map->nom =$arraysRecordsMap[$numberMap]["fields"]["uo_lib"]; 
-                    $map->coordonnees = $arraysRecordsMap[$numberMap]["fields"]["coordonnees"]; 
-                    $map->url = $arraysRecordsMap[$numberMap]["fields"]["url"]; 
-
-
-                    foreach ($etab_map as $m) { 
-                        if ($m==$map) { 
-                            $isAlreadyHere = 1; } 
-                        } 
-                        if ($isAlreadyHere == 0) { 
-                            array_push($etab_map,$map); 
-                        } 
-                          leafMark($numberMap,$arraysRecordsMap,$nameMap);
-                           
-                  }
-                }
+        } 
+        if ($isAlreadyHere == 0) { 
+            array_push($etab_liste,$etab); 
+        }
+        for ($numberMap = 0; $numberMap <= count($arraysRecordsMap)-1; $numberMap++){
+            $nameMap =$arraysRecordsMap[$numberMap]["fields"]["uo_lib"];
+            /* Vérification si les coordonnées existent et que les deux entités comparés ont le même noms */
+            if(checkingCoor($arraysRecordsMap,$numberMap)&&boolSameName($name,$nameMap)){
+                $isAlreadyHere = 0; 
+                /* Instaciation de la map pour stocker les données */
+                $map = new Map; 
+                $map->nom =$arraysRecordsMap[$numberMap]["fields"]["uai"];    
+                $map->nom =$arraysRecordsMap[$numberMap]["fields"]["uo_lib"]; 
+                $map->coordonnees = $arraysRecordsMap[$numberMap]["fields"]["coordonnees"]; 
+                $map->url = $arraysRecordsMap[$numberMap]["fields"]["url"]; 
+                foreach ($etab_map as $m) { 
+                    if ($m==$map) { 
+                        $isAlreadyHere = 1; 
+                    } 
+                } 
+                if ($isAlreadyHere == 0) { 
+                    array_push($etab_map,$map); 
+                    } 
+                leafMark($numberMap,$arraysRecordsMap,$nameMap);
             }
         }
+        }
     }
-
-         ?>
-  
-       </script>
+    }
+        ?>
+</script>
+<!-- Création du tableau -->
 <div class= "container">
     <table id="table"> 
             <thead>
@@ -118,22 +109,15 @@ $etab_liste = array();
             </thead>
             
             <tbody>
-                <?php 
-          
-                
-       
-                
-        
-       
-/*array_unique($etab_liste);
-            $etab_map_unarray_unique($etab_map);*/
-            addToTable($etab_liste, $etab_map); 
-            $_SESSION['etab_liste']=$etab_liste;
-            $_SESSION['etab_map']=$etab_map;
-            $_SESSION['viewList']=$viewList;
+    <?php 
+        /* Création des viriables dans les sessions */
+        addToTable($etab_liste, $etab_map); 
+        $_SESSION['etab_liste']=$etab_liste;
+        $_SESSION['etab_map']=$etab_map;
+
     ?>
-                            </tbody>
-        </table>
+            </tbody>
+    </table>
 </div>
  <?php
 

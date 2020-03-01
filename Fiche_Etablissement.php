@@ -4,6 +4,7 @@ include("header.html");
 include("Api.php");
 include("Etablissement.php");
 include("Map.php");
+// permet de créer le tableau 
 function etabTable($etab_liste, $etab_map,$etablissement) { 
     foreach ($etab_liste as $e) { 
         if  ($e->id ==$etablissement){
@@ -28,15 +29,11 @@ function etabTable($etab_liste, $etab_map,$etablissement) {
        
     }
 }
-
-
 session_start();
-
-
 ?>
-
-<div class= "container">
-    <table id="table"> 
+     <!-- Balise pour le tableau-->
+    <div class= "container">
+        <table id="table"> 
             <thead>
                 <tr>                        
                     <td>Nom</td>
@@ -50,27 +47,16 @@ session_start();
             <tbody>
                 <?php 
     
-               $id = $_POST["id"];
-                   
-
-            
-
-
-                 
-                
-        
-       
-/*array_unique($etab_liste);
-            $etab_map_unarray_unique($etab_map);*/
+            $id = $_POST["id"];
             etabTable($_SESSION['etab_liste'], $_SESSION['etab_map'],$id); 
     ?>
-                            </tbody>
+            </tbody>
         </table>
     <?php 
-   
+// permet de créer, d'incrémenter le compteur de vue
     if (!(isset($_SESSION[$id])))
                  {
-                             $_SESSION[$id] =0;
+                             $_SESSION[$id] =1;
                 }
                 else{
                       $_SESSION[$id]= $_SESSION[$id]+1 ;
@@ -79,7 +65,5 @@ session_start();
     echo '  View: ';
     
     echo  $_SESSION[$id];
-    
-
         ?>
 </div>
